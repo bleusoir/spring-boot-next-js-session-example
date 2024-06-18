@@ -1,2 +1,5 @@
 spring:
   application.name: back-spring-boot
+  security:
+    user:
+      password: 1234

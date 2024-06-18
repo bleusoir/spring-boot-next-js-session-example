@@ -14,9 +14,14 @@ class SecurityConfig {
     fun filterChain(http: HttpSecurity): DefaultSecurityFilterChain = http
         .csrf { it.disable() }
         .authorizeHttpRequests {
-            it.requestMatchers("/login").permitAll().anyRequest().authenticated()
+            it
+                .requestMatchers("/", "/login")
+                .permitAll()
+                .anyRequest()
+                .authenticated()
         }
         .logout { it.permitAll() }
+//        .default
         .sessionManagement { it.maximumSessions(1).maxSessionsPreventsLogin(false) }
         .build()
 }
