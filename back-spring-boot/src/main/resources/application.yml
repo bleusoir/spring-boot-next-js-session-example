@@ -1,5 +1,4 @@
 spring:
   application.name: back-spring-boot
-  security:
-    user:
-      password: 1234
+
+logging.level.org.springframework.security.web: trace

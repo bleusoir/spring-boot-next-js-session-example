@@ -9,5 +9,5 @@ import org.springframework.web.bind.annotation.RestController
 class IndexController {
 
     @GetMapping
-    fun index() = "INDEX"
+    fun index(): String = "INDEX"
 }
